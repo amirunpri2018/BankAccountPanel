@@ -23,7 +23,7 @@ if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] == true))
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>C.E.O Bank</title>
+    <title>C.E.O Bank | Panel logowania</title>
 </head>
 <body>
 

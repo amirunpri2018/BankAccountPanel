@@ -17,8 +17,6 @@ $haslo = $_POST['haslo'];
 if ($polaczenie->connect_errno != 0) {
     echo "Error: " . $polaczenie->connect_errno;
 } else {
-    $login = $_POST['login'];
-    $haslo = $_POST['haslo'];
 
     $login = htmlentities($login, ENT_QUOTES, "UTF-8");
     $haslo = htmlentities($haslo, ENT_QUOTES, "UTF-8");

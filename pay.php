@@ -25,7 +25,7 @@ if(!isset($_SESSION['zalogowany']))
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Bank</title>
+    <title>C.E.O Bank | Płatności</title>
 </head>
 <body>
 
@@ -59,11 +59,11 @@ if(!isset($_SESSION['zalogowany']))
 
 <div class="nav flex-column nav-pills menuleftblock">
     <a class="nav-link menuleft" href="account.php"><i class="fas fa-align-justify"></i> Mój pulpit</a>
-    <a class="nav-link menuleft" href="#"><i class="fas fa-money-check-alt"></i> Rachunki</a>
     <a class="nav-link menuleft active" href="pay.php"><i class="far fa-address-card"></i> Płatności</a>
-    <a class="nav-link menuleft" href="#"><i class="far fa-bell"></i> Powiadomienia</a>
-    <a class="nav-link menuleft" href="#"><i class="far fa-envelope"></i> Wiadomości</a>
-    <a class="nav-link menuleft" href="#"><i class="fas fa-wrench"></i> Ustawienia</a>
+    <a class="nav-link menuleft disabled" href="#"><i class="fas fa-money-check-alt"></i> Rachunki</a>
+    <a class="nav-link menuleft disabled" href="#"><i class="far fa-bell"></i> Powiadomienia</a>
+    <a class="nav-link menuleft disabled" href="#"><i class="far fa-envelope"></i> Wiadomości</a>
+    <a class="nav-link menuleft disabled" href="#"><i class="fas fa-wrench"></i> Ustawienia</a>
 </div>
 
 <main id="main">
@@ -81,7 +81,6 @@ if(!isset($_SESSION['zalogowany']))
                         <div>
                             <input class="przelewinput submit_przelew" type="submit" value="Wyślij przelew >"/>
                         </div>
-
                     </form>
 
                 </div>

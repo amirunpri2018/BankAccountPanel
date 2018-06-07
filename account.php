@@ -25,7 +25,7 @@ if(!isset($_SESSION['zalogowany']))
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>C.E.O Bank</title>
+    <title>C.E.O Bank | Mój pulpit</title>
 </head>
 <body>
 
@@ -43,11 +43,11 @@ if(!isset($_SESSION['zalogowany']))
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Konto osobiste</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Historia płatności</a>
-                    <a class="dropdown-item" href="#">Kredyty i lokaty</a>
-                    <a class="dropdown-item" href="#">Ustawienia</a>
+                    <a class="dropdown-item disabled" href="#">Historia płatności</a>
+                    <a class="dropdown-item disabled" href="#">Kredyty i lokaty</a>
+                    <a class="dropdown-item disabled" href="#">Ustawienia</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Pomoc</a>
+                    <a class="dropdown-item disabled" href="#">Pomoc</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -59,11 +59,11 @@ if(!isset($_SESSION['zalogowany']))
 
 <div class="nav flex-column nav-pills menuleftblock">
     <a class="nav-link active menuleft" href="account.php"><i class="fas fa-align-justify"></i> Mój pulpit</a>
-    <a class="nav-link menuleft" href="#"><i class="fas fa-money-check-alt"></i> Rachunki</a>
     <a class="nav-link menuleft" href="pay.php"><i class="far fa-address-card"></i> Płatności</a>
-    <a class="nav-link menuleft" href="#"><i class="far fa-bell"></i> Powiadomienia</a>
-    <a class="nav-link menuleft" href="#"><i class="far fa-envelope"></i> Wiadomości</a>
-    <a class="nav-link menuleft" href="#"><i class="fas fa-wrench"></i> Ustawienia</a>
+    <a class="nav-link menuleft disabled" href="#"><i class="fas fa-money-check-alt"></i> Rachunki</a>
+    <a class="nav-link menuleft disabled" href="#"><i class="far fa-bell"></i> Powiadomienia</a>
+    <a class="nav-link menuleft disabled" href="#"><i class="far fa-envelope"></i> Wiadomości</a>
+    <a class="nav-link menuleft disabled" href="#"><i class="fas fa-wrench"></i> Ustawienia</a>
 </div>
 
 
