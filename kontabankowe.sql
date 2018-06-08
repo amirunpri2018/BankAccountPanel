@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Czas generowania: 07 Cze 2018, 18:43
+-- Czas generowania: 08 Cze 2018, 14:56
 -- Wersja serwera: 10.1.31-MariaDB
 -- Wersja PHP: 7.2.4
 
@@ -43,7 +43,8 @@ CREATE TABLE `kontabankowe` (
 --
 
 INSERT INTO `kontabankowe` (`id`, `imie`, `nazwisko`, `login`, `haslo`, `nrkonta`, `pieniadze`) VALUES
-(1, 'Adrian', 'Pietrzak', 1234, 1234, '59 1910 1048 2427 1727 5320 0001', 986.86);
+(1, 'Adrian', 'Pietrzak', 1234, 1234, '987654321', 1000),
+(2, 'Mateusz', 'Polaszek', 1235, 1235, '123456789', 1000);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -63,7 +64,7 @@ ALTER TABLE `kontabankowe`
 -- AUTO_INCREMENT dla tabeli `kontabankowe`
 --
 ALTER TABLE `kontabankowe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -7,6 +7,7 @@ if(!isset($_SESSION['zalogowany']))
     header('location: index.php');
     exit();
 }
+
 ?>
 
 
@@ -79,7 +80,7 @@ if(!isset($_SESSION['zalogowany']))
                         <div><input class="przelewinput" type="text" placeholder="Podaj kwotę do przelewu" name="przelew_pieniadze"></div>
 
                         <div>
-                            <input class="przelewinput submit_przelew" type="submit" value="Wyślij przelew >"/>
+                            <input type="submit" class="przelewinput submit_przelew" value="Wyślij przelew >"/>
                         </div>
                     </form>
 
