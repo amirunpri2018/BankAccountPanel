@@ -130,6 +130,17 @@ body {
   }
 }
 
+@media (max-width: 678px) {
+  .ustawieniadiv {
+    width: 100% !important;
+    margin: 0!important;
+  }
+
+  .ustawieniainput {
+    width: 98%;
+  }
+}
+
 #main {
   margin-left: 90px;
   margin-right: 90px;
