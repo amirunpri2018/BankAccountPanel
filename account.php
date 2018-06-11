@@ -18,6 +18,7 @@ if(!isset($_SESSION['zalogowany']))
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway&amp;subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato&amp;subset=latin-ext" rel="stylesheet">
@@ -63,7 +64,7 @@ if(!isset($_SESSION['zalogowany']))
     <a class="nav-link menuleft disabled" href="#"><i class="fas fa-money-check-alt"></i> Rachunki</a>
     <a class="nav-link menuleft disabled" href="#"><i class="far fa-bell"></i> Powiadomienia</a>
     <a class="nav-link menuleft disabled" href="#"><i class="far fa-envelope"></i> Wiadomości</a>
-    <a class="nav-link menuleft disabled" href="#"><i class="fas fa-wrench"></i> Ustawienia</a>
+    <a class="nav-link menuleft" href="options.php"><i class="fas fa-wrench"></i> Ustawienia</a>
 </div>
 
 
@@ -73,16 +74,17 @@ if(!isset($_SESSION['zalogowany']))
             <div class="col-md-4 pieniadze">
 
                 <div id="pieniadze">
-                    Dostępne środki: <span class="sql"><?php echo $_SESSION['pieniadze'] ?></span> PLN
+                    Dostępne środki: <br><span style="font-weight: bold"><?php echo $_SESSION['pieniadze'] ?></span> PLN
+                    <span style="float: right; font-size: 14px; margin-top: -10px;"><a href="pay.php"><i class="far fa-id-card"></i> Zrób przelew</a></span>
                 </div>
 
             </div>
             <div class="col-md-8 rachunki">
 
                 <div id="rachunki">
-                    Numer konta: <span class="sql"><?php echo $_SESSION['nrkonta'] ?></span>
+                    Numer konta bankowego: <br><span style="font-weight: bold"><?php echo $_SESSION['nrkonta'] ?></span>
 
-                    <span class="textmakeprzelew" style="float: right; font-size: 14px;"><a href="pay.php">Zrób przelew ></a></span>
+                    <span class="textmakeprzelew" style="float: right; font-size: 14px; margin-top: -10px;"><a href="#"><i class="fas fa-exchange-alt"></i> Nowy rachunek</a></span>
                 </div>
 
             </div>
@@ -92,25 +94,29 @@ if(!isset($_SESSION['zalogowany']))
             <div class="col-md-4 lokaty">
 
                 <div id="lokaty">
-                    Lokaty: <span class="sql">--</span>
-                </div>
+                    <div id="headerblock"> Lokaty <spam style="float: right; font-size: 14px; color: #007bff"><a href="#"><i class="fab fa-creative-commons-nc"></i> Nowa lokata</a></spam></div><br>
+                    <div style="font-size: 13px" id="informacje">
+                    Sprawdź ile możesz zarobić na lokatach C.E.O Bank. Oferujemy szeroką gamę lokat odpowiadając na oczekiwania każdego klienta.
+                    <a href="pay.php">Ofera banku ></a></span>
+                    </div></div>
 
             </div>
             <div class="col-md-4 wiadomosci">
 
                 <div id="wiadomosci">
-                    Wiadomości: <span class="sql">0</span>
+                    <div id="headerblock">Fundusze <spam style="float: right; font-size: 14px; color: #007bff"><a href="#"><i class="fas fa-percent"></i> Nowy fundusz</a></spam></div><br>
+                    <div style="font-size: 13px" id="informacje">Sprawdź ile możesz zarobić na funduszach C.E.O Bank. Oferujemy szeroką gamę funduszy odpowiadając na oczekiwania każdego klienta. <a href="pay.php">Oferta banku ></a></span></div>
                 </div>
 
             </div>
-            <div class="col-md-4 informacje">
+            <div class="col-md-4 lokaty">
 
-                <div style="font-size: 13px" id="informacje">
-                <span>Zapoznaj się z bogatą ofertą C.E.O Bank w zakresie kart płatniczych i kredytowych.
-
-                    <span class="sql"><a href="#">Sprawdź ofertę ></a></span></span>
-                </div>
-
+                <div id="lokaty">
+                    <div id="headerblock"> Karty <spam style="float: right; font-size: 14px; color: #007bff"><a href="#"><i class="fab fa-cc-visa"></i> Nowa karta</a></spam></div><br>
+                    <div style="font-size: 13px" id="informacje">
+                        Sprawdź ile możesz zarobić na lokatach C.E.O Bank. Oferujemy szeroką gamę lokat odpowiadając na oczekiwania każdego klienta.
+                        <a href="pay.php">Oferta banku ></a></span>
+                    </div></div>
             </div>
         </div>
 

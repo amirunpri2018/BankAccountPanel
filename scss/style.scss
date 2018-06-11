@@ -5,7 +5,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: white;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .logo-text {
@@ -60,6 +60,7 @@ body {
     }
   }
 
+
   .navbar {
     border-bottom: 1px solid #d0d0d0;
     padding: 0 1rem!important;
@@ -70,6 +71,14 @@ body {
     margin-right: 30px;
     font-size: 25px;
   }
+
+#rejestracjacontent {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
 
   .nav-item {
     padding: 10px 10px;
@@ -140,12 +149,13 @@ body {
         -webkit-border-radius: 1px;
         -moz-border-radius: 1px;
         border-radius: 1px;
-        background-color: #f1f1f1;
+        background-color: #e1e1e1;
       }
     }
 
     .informacje {
       padding: 30px !important;
+
 
       #informacje {
         padding: 20px;
@@ -176,7 +186,7 @@ body {
         -webkit-border-radius: 1px;
         -moz-border-radius: 1px;
         border-radius: 1px;
-        background-color: #f1f1f1;
+        background-color: #e1e1e1;
       }
     }
 
@@ -250,3 +260,31 @@ body {
 .submit_przelew:hover {
   cursor: pointer;
 }
+
+/* rejestracja */
+
+.f_error {
+  color: red;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* opcje */
+
+.ustawieniadiv {
+  width: 49%;
+  float: left;
+  margin: 3px;
+
+  .ustawieniainput {
+    width: 98%;
+    padding: 15px;
+    border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 10px;
+    opacity: 0.7;
+  }
+}
+

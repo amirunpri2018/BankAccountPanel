@@ -1,16 +1,3 @@
-<?php
-
-session_start();
-
-if(!isset($_SESSION['zalogowany']))
-{
-    header('location: index.php');
-    exit();
-}
-
-?>
-
-
 <!doctype html>
 <html lang="pl">
 <head>
@@ -19,9 +6,6 @@ if(!isset($_SESSION['zalogowany']))
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&amp;subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -35,9 +19,9 @@ if(!isset($_SESSION['zalogowany']))
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">C<span class="sql">.</span>E<span class="sql">.</span>O Bank</a>
-    <span class="navbar-text">
-      Dzień dobry <span class="sql"><?php echo $_SESSION['imie'] ?></span>!
+        <a class="navbar-brand" href="#">C.E.O Bank</a>
+        <span class="navbar-text">
+      Dzień dobry *PHP*!
     </span>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -53,20 +37,20 @@ if(!isset($_SESSION['zalogowany']))
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> Wyloguj</a>
+                <a class="nav-link" href="#">Wyloguj</a>
             </li>
         </ul>
     </div>
 </nav>
 
-<div class="nav flex-column nav-pills menuleftblock">
-    <a class="nav-link menuleft" href="account.php"><i class="fas fa-align-justify"></i> Mój pulpit</a>
-    <a class="nav-link menuleft active" href="pay.php"><i class="far fa-address-card"></i> Płatności</a>
-    <a class="nav-link menuleft disabled" href="#"><i class="fas fa-money-check-alt"></i> Rachunki</a>
-    <a class="nav-link menuleft disabled" href="#"><i class="far fa-bell"></i> Powiadomienia</a>
-    <a class="nav-link menuleft disabled" href="#"><i class="far fa-envelope"></i> Wiadomości</a>
-    <a class="nav-link menuleft" href="options.php"><i class="fas fa-wrench"></i> Ustawienia</a>
-</div>
+<nav class="nav flex-column nav-pills">
+    <a class="nav-link menuleft" href="account.php">Mój pulpit</a>
+    <a class="nav-link menuleft" href="#">Rachunki</a>
+    <a class="nav-link active menuleft" href="#">Płatności</a>
+    <a class="nav-link menuleft" href="#">Powiadomienia</a>
+    <a class="nav-link menuleft" href="#">Wiadomości</a>
+    <a class="nav-link menuleft" href="#">Ustawienia</a>
+</nav>
 
 <main id="main">
     <div class="container-fluid">
@@ -75,14 +59,15 @@ if(!isset($_SESSION['zalogowany']))
 
                 <div id="przelew">
 
-                    <form action="przelew.php" method="post">
+                    <form>
 
                         <div><input class="przelewinput" type="text" placeholder="Podaj rachunek odbiorcy" name="przelew_nrkonta"></div>
                         <div><input class="przelewinput" type="text" placeholder="Podaj kwotę do przelewu" name="przelew_pieniadze"></div>
 
                         <div>
-                            <input type="submit" class="przelewinput submit_przelew" value="Wyślij przelew >"/>
+                            <input class="przelewinput submit_przelew" type="submit" value="Wyślij przelew >"/>
                         </div>
+
                     </form>
 
                 </div>
@@ -105,4 +90,3 @@ if(!isset($_SESSION['zalogowany']))
 <script src="js/script.js"></script>
 </body>
 </html>
-
