@@ -36,6 +36,11 @@ if (isset($_POST['r_imie'])) {
         $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i> Pole numer dostępu jest wymagane!";
     }
 
+    if (strlen($r_login) > 11) {
+        $wszystko_ok = false;
+        $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i> Wprowadź maksymalnie 10 znaków!";
+    }
+
     if (is_numeric($r_login) == false) {
         $wszystko_ok = false;
         $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i>Podaj tylko cyfry!";
@@ -47,6 +52,12 @@ if (isset($_POST['r_imie'])) {
         $wszystko_ok = false;
         $_SESSION['e_haslo'] = "<i class=\"fas fa-user-times\"></i> Pole kod dostępu jest wymagane!";
     }
+
+    if (strlen($r_haslo) > 11) {
+        $wszystko_ok = false;
+        $_SESSION['e_haslo'] = "<i class=\"fas fa-user-times\"></i> Wprowadź maksymalnie 10 znaków!";
+    }
+
 
     if (is_numeric($r_haslo) == false) {
         $wszystko_ok = false;

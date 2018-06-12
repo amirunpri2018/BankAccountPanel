@@ -74,6 +74,10 @@ if (isset($_POST['o_imie'])) {
             else {
                 if (strlen($o_login) < 1) {
                     $_SESSION['nieudanazmianaopcji'] = "<div style='color: red; text-align: center; font-weight: bold;'>Błąd. Zmiany nie zostały zawierdzone.</div>";
+                }
+                else if (strlen($o_login) > 11) {
+                    $_SESSION['nieudanazmianaopcji'] = "<div style='color: red; text-align: center; font-weight: bold;'>Błąd. Zmiany nie zostały zawierdzone.</div>";
+
                 } else if (is_numeric($o_login) == false) {
                     $_SESSION['nieudanazmianaopcji'] = "<div style='color: red; text-align: center; font-weight: bold;'>Błąd. Zmiany nie zostały zawierdzone.</div>";
                 }
@@ -94,6 +98,10 @@ if (isset($_POST['o_imie'])) {
             //poczatek haslo
 
             if (strlen($o_haslo) < 1) {
+                $_SESSION['nieudanazmianaopcji'] = "<div style='color: red; text-align: center; font-weight: bold;'>Błąd. Zmiany nie zostały zawierdzone.</div>";
+            }
+
+            if (strlen($o_haslo) > 11) {
                 $_SESSION['nieudanazmianaopcji'] = "<div style='color: red; text-align: center; font-weight: bold;'>Błąd. Zmiany nie zostały zawierdzone.</div>";
             }
 
