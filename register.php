@@ -76,36 +76,33 @@ if (isset($_POST['r_imie'])) {
             if ($ile_takich_loginow > 0) {
                 $wszystko_ok = false;
                 $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i> Istnieje już taki numer dostępu!";
-            }
+            } else {
 
-            do {
-                //generuj numer konta
-                $r_nrkonta = rand(1000000000, 9999999999);
+                    //generuj numer konta
+                    $r_nrkonta = rand(1000000000, 9999999999);
 
-                //czy nr konta istnieje?
-                $rezultat2 = $polaczenie->query("SELECT nrkonta FROM kontabankowe WHERE nrkonta='$r_nrkonta'");
-                if (!$rezultat2)
-                    throw new Exception($polaczenie->error);
+                    //czy nr konta istnieje?
+                    $rezultat2 = $polaczenie->query("SELECT nrkonta FROM kontabankowe WHERE nrkonta='$r_nrkonta'");
+                    if (!$rezultat2)
+                        throw new Exception($polaczenie->error);
 
-                $ile_takich_nrkonta = $rezultat2->num_rows;
-                if ($ile_takich_nrkonta > 0) {
-                    $wszystko_ok = false;
+                    $ile_takich_nrkonta = $rezultat2->num_rows;
+                    if ($ile_takich_nrkonta > 0) {
+                        $wszystko_ok = false;
+                    }
+
+                if ($wszystko_ok == true) {
+
+                    if ($polaczenie->query("INSERT INTO kontabankowe VALUES (NULL, '$r_imie', '$r_nazwisko', '$r_login', '$r_haslo', '$r_nrkonta', 10)")) {
+                        $_SESSION['udanarejestracja'] = "Rejestracja zakończona pomyślnie!";
+                        header('Location: index.php');
+                    } else {
+                        throw new Exception($polaczenie->error);
+                    }
                 }
 
-            } while ($wszystko_ok != true);
-
-
-            if ($wszystko_ok == true) {
-
-                if ($polaczenie->query("INSERT INTO kontabankowe VALUES (NULL, '$r_imie', '$r_nazwisko', '$r_login', '$r_haslo', '$r_nrkonta', 10)")) {
-                    $_SESSION['udanarejestracja'] = "Rejestracja zakończona pomyślnie!";
-                    header('Location: index.php');
-                } else {
-                    throw new Exception($polaczenie->error);
-                }
+                $polaczenie->close();
             }
-
-            $polaczenie->close();
         }
 
     } catch (Exception $e) {

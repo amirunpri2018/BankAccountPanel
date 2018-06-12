@@ -61,9 +61,9 @@ if(!isset($_SESSION['zalogowany']))
 <div class="nav flex-column nav-pills menuleftblock">
     <a class="nav-link active menuleft" href="account.php"><i class="fas fa-align-justify"></i> Mój pulpit</a>
     <a class="nav-link menuleft" href="pay.php"><i class="far fa-address-card"></i> Płatności</a>
-    <a class="nav-link menuleft disabled" href="#"><i class="fas fa-money-check-alt"></i> Rachunki</a>
-    <a class="nav-link menuleft disabled" href="#"><i class="far fa-bell"></i> Powiadomienia</a>
-    <a class="nav-link menuleft disabled" href="#"><i class="far fa-envelope"></i> Wiadomości</a>
+    <a class="nav-link menuleft" href="#"><i class="fas fa-money-check-alt"></i> Rachunki</a>
+    <a class="nav-link menuleft" href="#"><i class="far fa-bell"></i> Powiadomienia</a>
+    <a class="nav-link menuleft" href="#"><i class="far fa-envelope"></i> Wiadomości</a>
     <a class="nav-link menuleft" href="options.php"><i class="fas fa-wrench"></i> Ustawienia</a>
 </div>
 
@@ -91,7 +91,7 @@ if(!isset($_SESSION['zalogowany']))
         </div>
 
         <div class="row">
-            <div class="col-md-4 lokaty">
+            <div class="col-md-4 lokaty" style="padding-top: 0px!important;">
 
                 <div id="lokaty">
                     <div id="headerblock"> Lokaty <spam style="float: right; font-size: 14px; color: #007bff"><a href="#"><i class="fab fa-creative-commons-nc"></i> Nowa lokata</a></spam></div><br>
@@ -101,7 +101,7 @@ if(!isset($_SESSION['zalogowany']))
                     </div></div>
 
             </div>
-            <div class="col-md-4 wiadomosci">
+            <div class="col-md-4 wiadomosci" style="padding-top: 0px!important;">
 
                 <div id="wiadomosci">
                     <div id="headerblock">Fundusze <spam style="float: right; font-size: 14px; color: #007bff"><a href="#"><i class="fas fa-percent"></i> Nowy fundusz</a></spam></div><br>
@@ -109,14 +109,14 @@ if(!isset($_SESSION['zalogowany']))
                 </div>
 
             </div>
-            <div class="col-md-4 lokaty">
 
-                <div id="lokaty">
-                    <div id="headerblock"> Karty <spam style="float: right; font-size: 14px; color: #007bff"><a href="#"><i class="fab fa-cc-visa"></i> Nowa karta</a></spam></div><br>
-                    <div style="font-size: 13px" id="informacje">
-                        Sprawdź ile możesz zarobić na lokatach C.E.O Bank. Oferujemy szeroką gamę lokat odpowiadając na oczekiwania każdego klienta.
-                        <a href="pay.php">Oferta banku ></a></span>
-                    </div></div>
+            <div class="col-md-4 informacje" style="padding-top: 0px!important;">
+
+                <div id="informacje" >
+                    <div id="headerblock">Karty <spam style="float: right; font-size: 14px; color: #007bff;"><a href="#"><i class="fab fa-cc-amazon-pay"></i> Nowa karta</a></spam></div><br>
+                    <div style="font-size: 13px; padding: 0;" id="informacje">Sprawdź ile możesz zarobić na kartach C.E.O Bank. Oferujemy szeroką gamę funduszy odpowiadając na oczekiwania każdego klienta. <a href="pay.php">Oferta banku ></a></span></div>
+                </div>
+
             </div>
         </div>
 
@@ -127,7 +127,7 @@ if(!isset($_SESSION['zalogowany']))
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <h4 class="alert-heading">Powiadomienie!</h4>
-                    <p>Drogi kliencie! Prosimy o sprawdzenie, czy Twoje hasło jest na bieżąco aktualizowane. Pragniemy poinformować, że comiesięczna zmiana hasła zmniejsza włamania na konto o 90%!</p>
+                    <p>Drogi kliencie! Prosimy o sprawdzenie, czy Twoje hasło jest na bieżąco aktualizowane. Pragniemy poinformować, że regularna zmiana hasła zmniejsza ryzyko włamania na konto o 90%!</p>
                     <hr>
                     <p class="mb-0">Aby przejść do zmiany hasła, przejdź do zakładki Ustawienia.</p>
 

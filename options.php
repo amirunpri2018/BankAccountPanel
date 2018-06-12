@@ -68,15 +68,14 @@ if (isset($_POST['o_imie'])) {
 
             $ile_takich_loginow = $rezultat->num_rows;
             if ($ile_takich_loginow > 0) {
-                $wszystko_ok = false;
                 $_SESSION['eo_login'] = "<i class=\"fas fa-user-times\"></i> Istnieje już taki numer dostępu!";
             }
 
             else {
                 if (strlen($o_login) < 1) {
-                    $_SESSION['nieudanazmianaopcji'] = "<div style='color: red; text-align: center; font-weight: bold;'>Błąd. Numer dostępu nie został zmieniony.</div>";
+                    $_SESSION['nieudanazmianaopcji'] = "<div style='color: red; text-align: center; font-weight: bold;'>Błąd. Zmiany nie zostały zawierdzone.</div>";
                 } else if (is_numeric($o_login) == false) {
-                    $_SESSION['nieudanazmianaopcji'] = "<div style='color: red; text-align: center; font-weight: bold;'>Błąd. Numer dostępu nie został zmieniony.</div>";
+                    $_SESSION['nieudanazmianaopcji'] = "<div style='color: red; text-align: center; font-weight: bold;'>Błąd. Zmiany nie zostały zawierdzone.</div>";
                 }
 
                 else {
@@ -95,11 +94,11 @@ if (isset($_POST['o_imie'])) {
             //poczatek haslo
 
             if (strlen($o_haslo) < 1) {
-                $_SESSION['nieudanazmianaopcji'] = "<div style='color: red; text-align: center; font-weight: bold;'>Błąd. Kod dostępu nie został zmieniony.</div>";
+                $_SESSION['nieudanazmianaopcji'] = "<div style='color: red; text-align: center; font-weight: bold;'>Błąd. Zmiany nie zostały zawierdzone.</div>";
             }
 
             else if (is_numeric($o_haslo) == false) {
-                $_SESSION['nieudanazmianaopcji'] = "<div style='color: red; text-align: center; font-weight: bold;'>Błąd. Kod dostępu nie został zmieniony.</div>";
+                $_SESSION['nieudanazmianaopcji'] = "<div style='color: red; text-align: center; font-weight: bold;'>Błąd. Zmiany nie zostały zawierdzone.</div>";
             }
 
             else {

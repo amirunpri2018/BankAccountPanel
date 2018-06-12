@@ -55,7 +55,7 @@ if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] == true))
 
     if (isset($_SESSION['udanarejestracja']))
     {
-        echo "<div style='color: green; text-align: center; text-weight: bold; font-size: 13px;'>".$_SESSION['udanarejestracja']."</div>";
+        echo "<div style='color: green; text-align: center; font-weight: bold; font-size: 13px;'>".$_SESSION['udanarejestracja']."</div>";
         unset($_SESSION['udanarejestracja']);
     }
 

@@ -67,7 +67,7 @@ body {
   }
 
   .navbar-brand {
-    margin-left: 30px;
+    margin-left: 15px;
     margin-right: 30px;
     font-size: 25px;
   }
@@ -140,6 +140,18 @@ body {
     width: 98%;
   }
 }
+@media (max-width: 767px) {
+.container-fluid {
+  .wiadomosci, .lokaty, .lokaty, .informacje, .rachunki {
+    padding: 30px !important;
+  }
+}
+
+  .pieniadze {
+    padding-bottom: 0px!important;
+    padding-right: 30px!important;
+  }
+}
 
 #main {
   margin-left: 90px;
@@ -153,7 +165,10 @@ body {
     float: right;
 
     .pieniadze {
-      padding:30px !important;
+      padding-top:30px;
+      padding-left: 30px;
+      padding-bottom: 30px;
+      padding-right: 10px;
 
       #pieniadze {
         padding:20px;
@@ -165,8 +180,10 @@ body {
     }
 
     .informacje {
-      padding: 30px !important;
-
+      padding-top: 0px;
+      padding-left: 10px;
+      padding-bottom: 30px;
+      padding-right: 30px;
 
       #informacje {
         padding: 20px;
@@ -178,7 +195,10 @@ body {
     }
 
     .lokaty {
-      padding: 30px !important;
+      padding-top: 0px;
+      padding-right: 10px;
+      padding-left: 30px;
+      padding-bottom: 30px;
 
       #lokaty {
         padding: 20px;
@@ -190,7 +210,10 @@ body {
     }
 
     .rachunki {
-      padding: 30px !important;
+      padding-left: 10px;
+      padding-top: 30px;
+      padding-right: 30px;
+      padding-bottom: 30px;
 
       #rachunki {
         padding: 20px;
@@ -202,7 +225,10 @@ body {
     }
 
     .wiadomosci {
-      padding: 30px !important;
+      padding: 30px ;
+      padding-top: 0px;
+      padding-left: 10px;
+      padding-right: 10px;
 
       #wiadomosci {
         padding: 20px;
