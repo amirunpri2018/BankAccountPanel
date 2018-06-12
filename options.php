@@ -161,11 +161,11 @@ if (isset($_POST['o_imie'])) {
                 <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button"
                    aria-haspopup="true" aria-expanded="false">Konto osobiste</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Historia płatności</a>
-                    <a class="dropdown-item" href="#">Kredyty i lokaty</a>
-                    <a class="dropdown-item" href="#">Ustawienia</a>
+                    <a class="dropdown-item disabled" href="#">Historia płatności</a>
+                    <a class="dropdown-item" href="pay.php">Przelewy</a>
+                    <a class="dropdown-item" href="options.php">Ustawienia</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Pomoc</a>
+                    <a class="dropdown-item disabled" href="#">Pomoc</a>
                 </div>
             </li>
             <li class="nav-item">

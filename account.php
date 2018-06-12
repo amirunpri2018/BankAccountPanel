@@ -45,8 +45,8 @@ if(!isset($_SESSION['zalogowany']))
                 <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Konto osobiste</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item disabled" href="#">Historia płatności</a>
-                    <a class="dropdown-item disabled" href="#">Kredyty i lokaty</a>
-                    <a class="dropdown-item disabled" href="#">Ustawienia</a>
+                    <a class="dropdown-item" href="pay.php">Przelewy</a>
+                    <a class="dropdown-item" href="options.php">Ustawienia</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item disabled" href="#">Pomoc</a>
                 </div>
@@ -61,9 +61,9 @@ if(!isset($_SESSION['zalogowany']))
 <div class="nav flex-column nav-pills menuleftblock">
     <a class="nav-link active menuleft" href="account.php"><i class="fas fa-align-justify"></i> Mój pulpit</a>
     <a class="nav-link menuleft" href="pay.php"><i class="far fa-address-card"></i> Płatności</a>
-    <a class="nav-link menuleft" href="#"><i class="fas fa-money-check-alt"></i> Rachunki</a>
-    <a class="nav-link menuleft" href="#"><i class="far fa-bell"></i> Powiadomienia</a>
-    <a class="nav-link menuleft" href="#"><i class="far fa-envelope"></i> Wiadomości</a>
+    <a class="nav-link menuleft disabled" href="#"><i class="fas fa-money-check-alt"></i> Rachunki</a>
+    <a class="nav-link menuleft disabled" href="#"><i class="far fa-bell"></i> Powiadomienia</a>
+    <a class="nav-link menuleft disabled" href="#"><i class="far fa-envelope"></i> Wiadomości</a>
     <a class="nav-link menuleft" href="options.php"><i class="fas fa-wrench"></i> Ustawienia</a>
 </div>
 
@@ -126,10 +126,10 @@ if(!isset($_SESSION['zalogowany']))
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="alert-heading">Powiadomienie!</h4>
+                    <h4 class="alert-heading">Powiadomienie <i class="far fa-bell"></i></h4>
                     <p>Drogi kliencie! Prosimy o sprawdzenie, czy Twoje hasło jest na bieżąco aktualizowane. Pragniemy poinformować, że regularna zmiana hasła zmniejsza ryzyko włamania na konto o 90%!</p>
                     <hr>
-                    <p class="mb-0">Aby przejść do zmiany hasła, przejdź do zakładki Ustawienia.</p>
+                    <p class="mb-0">Aby przejść do zmiany hasła, przejdź do zakładki <a href="options.php">Ustawienia</a>.</p>
 
                 </div>
             </div>

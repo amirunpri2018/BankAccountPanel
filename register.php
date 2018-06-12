@@ -78,8 +78,9 @@ if (isset($_POST['r_imie'])) {
                 $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i> Istnieje już taki numer dostępu!";
             } else {
 
+                do {
                     //generuj numer konta
-                    $r_nrkonta = rand(1000000000, 9999999999);
+                    $r_nrkonta = rand(100000000000, 999999999999);
 
                     //czy nr konta istnieje?
                     $rezultat2 = $polaczenie->query("SELECT nrkonta FROM kontabankowe WHERE nrkonta='$r_nrkonta'");
@@ -89,7 +90,10 @@ if (isset($_POST['r_imie'])) {
                     $ile_takich_nrkonta = $rezultat2->num_rows;
                     if ($ile_takich_nrkonta > 0) {
                         $wszystko_ok = false;
+                    } else {
+                        $wszystko_ok = true;
                     }
+                } while ($wszystko_ok != true);
 
                 if ($wszystko_ok == true) {
 
@@ -179,7 +183,7 @@ if (isset($_POST['r_imie'])) {
         }
 
         ?>
-        <div style="text-align: center; margin: 5px;"><label>
+        <div style="text-align: center; margin-top: 5px;"><label>
                 <input type="checkbox" name="regulamin" style="width: 10px;"> Akceptuję regulamin
             </label></div>
 
