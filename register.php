@@ -88,8 +88,6 @@ if (isset($_POST['r_imie'])) {
                 $wszystko_ok = false;
                 $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i> Istnieje już taki numer dostępu!";
             } else {
-
-                do {
                     //generuj numer konta
                     $r_nrkonta = rand(100000000000, 999999999999);
 
@@ -100,11 +98,9 @@ if (isset($_POST['r_imie'])) {
 
                     $ile_takich_nrkonta = $rezultat2->num_rows;
                     if ($ile_takich_nrkonta > 0) {
-                        $wszystko_ok = false;
-                    } else {
+                        $r_nrkonta++;
                         $wszystko_ok = true;
                     }
-                } while ($wszystko_ok != true);
 
                 if ($wszystko_ok == true) {
 
