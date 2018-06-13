@@ -3,7 +3,7 @@
 session_start();
 
 if ((!isset($_POST['login'])) || (!isset($_POST['haslo']))) {
-    header('location: index.php');
+    header('location: ../index.php');
     exit();
 }
 
@@ -43,10 +43,10 @@ if ($polaczenie->connect_errno != 0) {
 
             unset($_SESSION['blad']);
             $rezultat->free_result();
-            header('Location: account.php');
+            header('Location: ../pulpit/index.php');
         } else {
-            $_SESSION['blad'] = '<div style="color: red; text-align: center;">Nieprawidłowy numer lub kod dostępu!</div>';
-            header('location: index.php');
+            $_SESSION['blad'] = '<div style="color: red; text-align: center; font-weight: bold; font-size: 13px;">Nieprawidłowy numer lub kod dostępu!</div>';
+            header('location: ../index.php');
         }
     }
 

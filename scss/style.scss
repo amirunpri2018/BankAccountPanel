@@ -86,7 +86,7 @@ body {
 
   .flex-column {
     border-right: 1px solid #d0d0d0;
-    width: 14%;
+    width: 19vh;
     height: 95%;
     float: left;
   }
@@ -121,14 +121,37 @@ body {
 
     #main {
       margin: 5px!important;
+      padding: 0px!important;
+
     }
   }
+
+  @media (min-width: 768px) and (max-width: 947px) {
+  .makepaytext {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1289px) {
+  .makepaytext {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1066px) {
+  .textmakefundusz, .textmakeinformacja, .textmakelokata {
+    display: none;
+  }
+}
+
 
 @media (max-width: 427px) {
   .textmakeprzelew, .navbar-text {
     display: none;
   }
 }
+
+
 
 @media (max-width: 678px) {
   .ustawieniadiv {
@@ -154,15 +177,15 @@ body {
 }
 
 #main {
-  margin-left: 90px;
-  margin-right: 90px;
+  margin: 0 auto;
+  padding-right: 60px;
+  padding-left: 250px;
 }
 
   .container-fluid {
     padding-left: 0px !important;
     padding-right: 0px !important;
-    width: 84%;
-    float: right;
+    width: 100%;
 
     .pieniadze {
       padding-top:30px;
@@ -324,4 +347,3 @@ body {
     opacity: 0.7;
   }
 }
-

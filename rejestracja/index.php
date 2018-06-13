@@ -7,14 +7,25 @@ if (isset($_POST['r_imie'])) {
 
     $r_imie = $_POST['r_imie'];
 
+
     if (strlen($r_imie) < 1) {
         $wszystko_ok = false;
         $_SESSION['e_imie'] = "<i class=\"fas fa-user-times\"></i> Pole imię jest wymagane!";
     }
 
+    if (strlen($r_imie) > 16) {
+        $wszystko_ok = false;
+        $_SESSION['e_imie'] = "<i class=\"fas fa-user-times\"></i> Wprowadź maksymalnie 15 liter!";
+    }
+
     if (ctype_alnum($r_imie) == false) {
         $wszystko_ok = false;
         $_SESSION['e_imie'] = "<i class=\"fas fa-user-times\"></i> Pole imię jest wymagane!";
+    }
+
+    if (preg_match("/[^A-z_-]/", $r_imie) == 1) {
+        $wszystko_ok = false;
+        $_SESSION['e_imie'] = "<i class=\"fas fa-user-times\"></i> Wprowadź tylko litery!";
     }
 
     $r_nazwisko = $_POST['r_nazwisko'];
@@ -24,9 +35,19 @@ if (isset($_POST['r_imie'])) {
         $_SESSION['e_nazwisko'] = "<i class=\"fas fa-user-times\"></i> Pole nazwisko jest wymagane!";
     }
 
+    if (strlen($r_nazwisko) > 16) {
+        $wszystko_ok = false;
+        $_SESSION['e_nazwisko'] = "<i class=\"fas fa-user-times\"></i> Wprowadź maksymalnie 15 liter!";
+    }
+
     if (ctype_alnum($r_nazwisko) == false) {
         $wszystko_ok = false;
         $_SESSION['e_nazwisko'] = "<i class=\"fas fa-user-times\"></i> Pole nazwisko jest wymagane!";
+    }
+
+    if (preg_match("/[^A-z_-]/", $r_nazwisko) == 1) {
+        $wszystko_ok = false;
+        $_SESSION['e_nazwisko'] = "<i class=\"fas fa-user-times\"></i> Wprowadź tylko litery!";
     }
 
     $r_login = trim($_POST['r_login']);
@@ -46,6 +67,18 @@ if (isset($_POST['r_imie'])) {
         $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i>Podaj tylko cyfry!";
     }
 
+    if (is_numeric($r_login) == false || ((int)$r_login != $r_login))
+    {
+        $wszystko_ok = false;
+        $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i> Wprowadź tylko cyfry całkowite!";
+    }
+
+    if(strpos($r_login, '.') == true)
+    {
+        $wszystko_ok = false;
+        $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i> Wprowadź tylko cyfry całkowite!";
+    }
+
     $r_haslo = trim($_POST['r_haslo']);
 
     if (strlen($r_haslo) < 1) {
@@ -58,18 +91,19 @@ if (isset($_POST['r_imie'])) {
         $_SESSION['e_haslo'] = "<i class=\"fas fa-user-times\"></i> Wprowadź maksymalnie 10 znaków!";
     }
 
-
-    if (is_numeric($r_haslo) == false) {
+    if (is_numeric($r_haslo) == false || ((int)$r_haslo != $r_haslo))
+    {
         $wszystko_ok = false;
-        $_SESSION['e_haslo'] = "<i class=\"fas fa-user-times\"></i> Podaj tylko cyfry!";
+        $_SESSION['e_haslo'] = "<i class=\"fas fa-user-times\"></i> Wprowadź tylko cyfry całkowite!";
     }
 
-    if (!isset($_POST['regulamin'])) {
+    if(strpos($r_haslo, '.') == true)
+    {
         $wszystko_ok = false;
-        $_SESSION['e_regulamin'] = "<i class=\"fas fa-user-times\"></i> Zaakceptuj regulamin!";
+        $_SESSION['e_haslo'] = "<i class=\"fas fa-user-times\"></i> Wprowadź tylko cyfry całkowite!";
     }
 
-    require_once "connect.php";
+    require_once "../php/connect.php";
     mysqli_report(MYSQLI_REPORT_STRICT);
 
     try {
@@ -88,44 +122,55 @@ if (isset($_POST['r_imie'])) {
                 $wszystko_ok = false;
                 $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i> Istnieje już taki numer dostępu!";
             } else {
-                    //generuj numer konta
-                    $r_nrkonta = rand(100000000000, 999999999999);
+                //generuj numer konta
+                $r_nrkonta = rand(100000000000000, 999999999999999);
 
-                    //czy nr konta istnieje?
-                    $rezultat2 = $polaczenie->query("SELECT nrkonta FROM kontabankowe WHERE nrkonta='$r_nrkonta'");
-                    if (!$rezultat2)
-                        throw new Exception($polaczenie->error);
+                //czy nr konta istnieje?
+                $rezultat2 = $polaczenie->query("SELECT nrkonta FROM kontabankowe WHERE nrkonta='$r_nrkonta'");
+                if (!$rezultat2)
+                    throw new Exception($polaczenie->error);
 
-                    $ile_takich_nrkonta = $rezultat2->num_rows;
-                    if ($ile_takich_nrkonta > 0) {
-                        $r_nrkonta++;
-                        $wszystko_ok = true;
-                    }
+                $ile_takich_nrkonta = $rezultat2->num_rows;
+                if ($ile_takich_nrkonta > 0) {
+                    $r_nrkonta++;
+                    $wszystko_ok = true;
+                }
 
                 if ($wszystko_ok == true) {
 
-                    if ($polaczenie->query("INSERT INTO kontabankowe VALUES (NULL, '$r_imie', '$r_nazwisko', '$r_login', '$r_haslo', '$r_nrkonta', 10)")) {
+                    $r_imie = htmlentities($r_imie, ENT_QUOTES, "UTF-8");
+                    $r_nazwisko = htmlentities($r_nazwisko, ENT_QUOTES, "UTF-8");
+                    $r_login = htmlentities($r_login, ENT_QUOTES, "UTF-8");
+                    $r_haslo = htmlentities($r_haslo, ENT_QUOTES, "UTF-8");
+
+
+                    if ($polaczenie->query("INSERT INTO kontabankowe VALUES (NULL, '$r_imie', '$r_nazwisko', '$r_login', '$r_haslo', '$r_nrkonta', 10)")
+
+
+                    ) {
                         $_SESSION['udanarejestracja'] = "Rejestracja zakończona pomyślnie!";
-                        header('Location: index.php');
+                        header('Location: ../index.php');
                     } else {
                         throw new Exception($polaczenie->error);
                     }
-                }
 
-                $polaczenie->close();
+
+                    $polaczenie->close();
+                }
             }
         }
-
     } catch (Exception $e) {
         echo "<span style='color: red;'>Błąd serwera! Prosimy o rejestrację w innym terminie! :)</span>";
+        echo $e;
     }
 }
 
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 <head>
+    <title>C.E.O Bank | Rejestracja</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -137,17 +182,40 @@ if (isset($_POST['r_imie'])) {
     <link href="https://fonts.googleapis.com/css?family=Lato&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-    <title>C.E.O Bank | Rejestracja</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
 <div id="content">
-
     <div class="logo-text">C<span class="sql">.</span>E<span class="sql">.</span>O Bank</div>
     <form method="post">
-        <div><input type="text" name="r_imie" placeholder="Podaj imię"></div>
+        <div><input type="text" name="r_imie" placeholder="Podaj imię" value="<?php
+
+            if (isset($_POST['r_imie'])) {
+
+                if (strlen($r_imie) < 1) {
+                    echo "";
+                }
+
+                if (strlen($r_imie) > 16) {
+                    echo "";
+                }
+
+                if (ctype_alnum($r_imie) == false) {
+                    echo "";
+                }
+
+                if (preg_match("/[^A-z_-]/", $r_imie) == 1) {
+                    echo "";
+                }
+
+                else {
+                    echo $r_imie;
+                }
+            }
+
+
+            ?>"></div>
 
         <?php
 
@@ -158,7 +226,28 @@ if (isset($_POST['r_imie'])) {
 
         ?>
 
-        <div><input type="text" name="r_nazwisko" placeholder="Podaj nazwisko"></div>
+        <div><input type="text" name="r_nazwisko" placeholder="Podaj nazwisko" value="<?php
+
+            if (isset($_POST['r_nazwisko'])) {
+
+                if (strlen($r_nazwisko) < 1) {
+                    echo "";}
+
+                if (strlen($r_nazwisko) > 16) {
+                    echo "";}
+
+                if (ctype_alnum($r_nazwisko) == false) {
+                    echo "";}
+
+                if (preg_match("/[^A-z_-]/", $r_nazwisko) == 1) {
+                    echo "";}
+                else {
+                    echo "$r_nazwisko";
+                }
+
+            }
+
+            ?>"></div>
 
         <?php
 
@@ -169,7 +258,25 @@ if (isset($_POST['r_imie'])) {
 
         ?>
 
-        <div><input type="text" name="r_login" placeholder="Podaj numer dostepu"></div>
+        <div><input type="text" name="r_login" placeholder="Podaj numer dostępu" value="<?php
+
+            if (isset($_POST['r_login'])) {
+
+                if (strlen($r_login) < 1) {
+                    echo ""; }
+
+                if (strlen($r_login) > 11) {
+                    echo ""; }
+
+                if (is_numeric($r_login) == false) {
+                    echo "";}
+
+                    else {
+                        echo "$r_login";
+                    }
+            }
+
+            ?>"></div>
 
         <?php
 
@@ -180,7 +287,27 @@ if (isset($_POST['r_imie'])) {
 
         ?>
 
-        <div><input type="password" name="r_haslo" placeholder="Podaj kod dostępu"></div>
+        <div><input type="password" name="r_haslo" placeholder="Podaj kod dostępu" value="<?php
+
+            if (isset($_POST['r_haslo'])) {
+
+                if (strlen($r_haslo) < 1) {
+                    echo "";
+                }
+
+                if (strlen($r_haslo) > 11) {
+                    echo "";
+                }
+
+                if (is_numeric($r_haslo) == false) {
+                    echo "";
+                } else {
+                    echo $r_haslo;
+                }
+            }
+
+            ?>"></div>
+
 
         <?php
 
@@ -190,25 +317,13 @@ if (isset($_POST['r_imie'])) {
         }
 
         ?>
-        <div style="text-align: center; margin-top: 5px;"><label>
-                <input type="checkbox" name="regulamin" style="width: 10px;"> Akceptuję regulamin
-            </label></div>
-
-        <?php
-
-        if (isset($_SESSION['e_regulamin'])) {
-            echo '<div class="f_error" style>' . $_SESSION['e_regulamin'] . '</div>';
-            unset($_SESSION['e_regulamin']);
-        }
-
-        ?>
 
         <br>
         <div><input type="submit" value="Rejestracja >"></div>
 
     </form>
 
-    <div id="rejestracjacontent">Masz już konto? <a href="index.php">Zaloguj się</a>.</div>
+    <div id="rejestracjacontent">Masz już konto? <a href="../">Zaloguj się</a>.</div>
 </div>
 
 
@@ -221,7 +336,6 @@ if (isset($_POST['r_imie'])) {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
         integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
-<script src="js/script.js"></script>
 </body>
 </html>
 

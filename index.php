@@ -4,7 +4,7 @@ session_start();
 
 if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] == true))
 {
-    header('location: account.php');
+    header('location: pulpit/index.php');
     exit();
 }
 
@@ -13,6 +13,8 @@ if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] == true))
 <!doctype html>
 <html lang="en">
 <head>
+    <title>C.E.O Bank | Panel logowania</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -25,14 +27,13 @@ if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] == true))
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>C.E.O Bank | Panel logowania</title>
 </head>
 <body>
 
-<div id="content">
+<main id="content">
 
     <div class="logo-text">C<span class="sql">.</span>E<span class="sql">.</span>O Bank</div>
-    <form action="zaloguj.php" method="post">
+    <form action="php/zaloguj.php" method="post">
         <div><input type="text" name="login" placeholder="Wprowadź numer"></div>
         <div><input type="password" name="haslo" placeholder="Wpisz kod dostępu"></div>
         <br>
@@ -49,7 +50,7 @@ if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] == true))
     }
 
     ?>
-    <div id="rejestracjacontent">Nie masz konta? <a href="register.php">Zarejestruj się</a>.</div>
+    <div id="rejestracjacontent">Nie masz konta? <a href="rejestracja/index.php">Zarejestruj się</a>.</div>
 
     <?php
 
@@ -60,9 +61,7 @@ if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] == true))
     }
 
     ?>
-</div>
-
-
+</main>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -73,7 +72,6 @@ if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] == true))
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
         integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
-<script src="js/script.js"></script>
 </body>
 </html>
 

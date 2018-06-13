@@ -13,6 +13,7 @@ if(!isset($_SESSION['zalogowany']))
 <!doctype html>
 <html lang="pl">
 <head>
+    <title>C.E.O Bank | Płatności</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -24,8 +25,6 @@ if(!isset($_SESSION['zalogowany']))
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
-
-    <title>C.E.O Bank | Płatności</title>
 </head>
 <body>
 
@@ -58,12 +57,12 @@ if(!isset($_SESSION['zalogowany']))
 </nav>
 
 <div class="nav flex-column nav-pills menuleftblock">
-    <a class="nav-link menuleft" href="../account.php"><i class="fas fa-align-justify"></i> Mój pulpit</a>
-    <a class="nav-link menuleft active" href="../pay.php"><i class="far fa-address-card"></i> Płatności</a>
+    <a class="nav-link menuleft" href="../pulpit/"><i class="fas fa-align-justify"></i> Mój pulpit</a>
+    <a class="nav-link menuleft active" href="../platnosci/"><i class="far fa-address-card"></i> Płatności</a>
     <a class="nav-link menuleft disabled" href="#"><i class="fas fa-money-check-alt"></i> Rachunki</a>
     <a class="nav-link menuleft disabled" href="#"><i class="far fa-bell"></i> Powiadomienia</a>
     <a class="nav-link menuleft disabled" href="#"><i class="far fa-envelope"></i> Wiadomości</a>
-    <a class="nav-link menuleft disabled" href="#"><i class="fas fa-wrench"></i> Ustawienia</a>
+    <a class="nav-link menuleft disabled" href="../ustawienia/"><i class="fas fa-wrench"></i> Ustawienia</a>
 </div>
 
 <main id="main">
@@ -73,7 +72,7 @@ if(!isset($_SESSION['zalogowany']))
                 <div id="przelew" style="text-align: center">
                     <p>Przelew <b style="color: red">nie został</b> wykonany.<br>Nie znaleziono takiego numeru konta bankowego.</p>
                     <br>
-                    <a href="../account.php">< Powrót</a>
+                    <a href="../pulpit/">< Powrót</a>
                 </div>
             </div>
         </div>
@@ -90,7 +89,6 @@ if(!isset($_SESSION['zalogowany']))
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
         integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
-<script src="../js/script.js"></script>
 </body>
 </html>
 
