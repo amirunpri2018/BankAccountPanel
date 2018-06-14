@@ -143,7 +143,7 @@ $polaczenie->close();
                     <div id="headerblock"> Lokaty <span class="textmakelokata" style="float: right; font-size: 14px; color: #007bff"><a href="#"><i class="fab fa-creative-commons-nc"></i> Nowa lokata</a></span></div><br>
                     <div style="font-size: 13px" id="informacje">
                     Sprawdź ile możesz zarobić na lokatach C.E.O Bank. Oferujemy szeroką gamę lokat odpowiadając na oczekiwania każdego klienta.
-                    <a href="pay.php">Ofera banku ></a></span>
+                    <a href="#">Ofera banku ></a></span>
                     </div></div>
 
             </div>
@@ -151,7 +151,7 @@ $polaczenie->close();
 
                 <div id="wiadomosci">
                     <div id="headerblock">Fundusze <span class="textmakefundusz" style="float: right; font-size: 14px; color: #007bff"><a href="#"><i class="fas fa-percent"></i> Nowy fundusz</a></span></div><br>
-                    <div style="font-size: 13px" id="informacje">Sprawdź ile możesz zarobić na funduszach C.E.O Bank. Oferujemy szeroką gamę funduszy odpowiadając na oczekiwania każdego klienta. <a href="pay.php">Oferta banku ></a></span></div>
+                    <div style="font-size: 13px" id="informacje">Sprawdź ile możesz zarobić na funduszach C.E.O Bank. Oferujemy szeroką gamę funduszy odpowiadając na oczekiwania każdego klienta. <a href="#">Oferta banku ></a></span></div>
                 </div>
 
             </div>
@@ -160,7 +160,7 @@ $polaczenie->close();
 
                 <div id="informacje" >
                     <div id="headerblock">Karty <span class="textmakeinformacja" style="float: right; font-size: 14px; color: #007bff;"><a href="#"><i class="fab fa-cc-amazon-pay"></i> Nowa karta</a></span></div><br>
-                    <div style="font-size: 13px; padding: 0;" id="informacje">Sprawdź ile możesz zarobić na kartach C.E.O Bank. Oferujemy szeroką gamę funduszy odpowiadając na oczekiwania każdego klienta. <a href="pay.php">Oferta banku ></a></span></div>
+                    <div style="font-size: 13px; padding: 0;" id="informacje">Sprawdź ile możesz zarobić na kartach C.E.O Bank. Oferujemy szeroką gamę funduszy odpowiadając na oczekiwania każdego klienta. <a href="#">Oferta banku ></a></span></div>
                 </div>
 
             </div>

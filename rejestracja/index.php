@@ -279,6 +279,16 @@ background-color: rgba(255,0,0,0.10)!important;
             if ($ile_takich_loginow > 0) {
                 $wszystko_ok = false;
                 $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i> Istnieje już taki numer dostępu!";
+
+                echo "<style>
+
+input[name='r_login'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
+
             } else {
                 //generuj numer konta
                 $r_nrkonta = rand(100000000000000, 999999999999999);
