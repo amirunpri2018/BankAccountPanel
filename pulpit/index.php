@@ -64,7 +64,7 @@ $polaczenie->close();
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">C<span class="sql">.</span>E<span class="sql">.</span>O Bank</a>
@@ -107,7 +107,9 @@ $polaczenie->close();
             <div class="col-md-4 pieniadze">
 
                 <div id="pieniadze">
-                    Dostępne środki: <br><span style="font-weight: bold"><?php echo $_SESSION['pieniadze'] ?></span> PLN
+                    Dostępne środki: <br><span style="font-weight: bold"><?php
+
+                        echo number_format($_SESSION['pieniadze'], 2, ',', ' '); ?></span> PLN
                     <span class="makepaytext" style="float: right; font-size: 14px; margin-top: -10px;"><a href="../platnosci/"><i class="far fa-id-card"></i> Zrób przelew</a></span>
                 </div>
 
@@ -170,7 +172,7 @@ $polaczenie->close();
         </div>
 
         <div class="alert alert-primary alert-dismissible fade show" style="margin: 15px;" role="alert">
-            Wskazówka <i class="far fa-flag"></i> Czy wiedziałeś, że każdy przelew w C.E.O Bank jest natychmiastowy?
+            <strong>Wskazówka <i class="far fa-flag"></i></strong> Czy wiedziałeś, że każdy przelew w C.E.O Bank jest natychmiastowy?
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>

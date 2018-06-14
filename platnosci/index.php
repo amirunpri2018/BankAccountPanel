@@ -121,6 +121,14 @@ $polaczenie->close();
                 </div>
             </div>
         </div>
+
+        <div class="alert alert-primary alert-dismissible fade show" style="margin: 15px;" role="alert">
+            <strong>Wskazówka <i class="far fa-flag"></i></strong> Pamiętaj, aby upewnić się, czy numer rachunku odbiorcy został wprowadzony poprawnie.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
     </div>
 </main>
 
