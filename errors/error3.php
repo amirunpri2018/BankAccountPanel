@@ -14,6 +14,7 @@ if(!isset($_SESSION['zalogowany']))
 <html lang="pl">
 <head>
     <title>C.E.O Bank | Płatności</title>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -28,10 +29,21 @@ if(!isset($_SESSION['zalogowany']))
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-light p-4" style="text-align: center;">
+        <a class="dropdown-item" href="../pulpit/">Pulpit</a>
+        <a class="dropdown-item" href="../platnosci/">Płatności</a>
+        <a class="dropdown-item" href="../ustawienia/">Ustawienia</a>
+        <a class="dropdown-item" href="../php/logout.php">Wyloguj</a>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light nawigacja">
+    <nav class="navbar navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
     <a class="navbar-brand" href="#">C<span class="sql">.</span>E<span class="sql">.</span>O Bank</a>
     <span class="navbar-text">
       Dzień dobry <span class="sql"><?php echo $_SESSION['imie'] ?></span>!
@@ -40,13 +52,13 @@ if(!isset($_SESSION['zalogowany']))
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Konto osobiste</a>
+                <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="/platnosci/" role="button" aria-haspopup="true" aria-expanded="false">Konto osobiste</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Historia płatności</a>
-                    <a class="dropdown-item" href="#">Kredyty i lokaty</a>
-                    <a class="dropdown-item" href="#">Ustawienia</a>
+                    <a class="dropdown-item disabled" href="#">Historia płatności</a>
+                    <a class="dropdown-item" href="/platnosci/">Przelewy</a>
+                    <a class="dropdown-item" href="../ustawienia/">Ustawienia</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Pomoc</a>
+                    <a class="dropdown-item disabled" href="#">Pomoc</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -62,7 +74,7 @@ if(!isset($_SESSION['zalogowany']))
     <a class="nav-link menuleft disabled" href="#"><i class="fas fa-money-check-alt"></i> Rachunki</a>
     <a class="nav-link menuleft disabled" href="#"><i class="far fa-bell"></i> Powiadomienia</a>
     <a class="nav-link menuleft disabled" href="#"><i class="far fa-envelope"></i> Wiadomości</a>
-    <a class="nav-link menuleft disabled" href="../ustawienia/"><i class="fas fa-wrench"></i> Ustawienia</a>
+    <a class="nav-link menuleft" href="../ustawienia/"><i class="fas fa-wrench"></i> Ustawienia</a>
 </div>
 
 <main id="main">
