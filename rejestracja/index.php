@@ -11,21 +11,62 @@ if (isset($_POST['r_imie'])) {
     if (strlen($r_imie) < 1) {
         $wszystko_ok = false;
         $_SESSION['e_imie'] = "<i class=\"fas fa-user-times\"></i> Pole imię jest wymagane!";
+
+
+        echo "<style>
+
+input[name='r_imie'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
+
     }
 
     if (strlen($r_imie) > 16) {
         $wszystko_ok = false;
         $_SESSION['e_imie'] = "<i class=\"fas fa-user-times\"></i> Wprowadź maksymalnie 15 liter!";
+
+        echo "<style>
+
+input[name='r_imie'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
+
     }
 
     if (ctype_alnum($r_imie) == false) {
         $wszystko_ok = false;
         $_SESSION['e_imie'] = "<i class=\"fas fa-user-times\"></i> Pole imię jest wymagane!";
+
+        echo "<style>
+
+input[name='r_imie'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
+
     }
 
     if (preg_match("/[^A-z_-]/", $r_imie) == 1) {
         $wszystko_ok = false;
         $_SESSION['e_imie'] = "<i class=\"fas fa-user-times\"></i> Wprowadź tylko litery!";
+
+        echo "<style>
+
+input[name='r_imie'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
+
     }
 
     $r_nazwisko = $_POST['r_nazwisko'];
@@ -33,21 +74,57 @@ if (isset($_POST['r_imie'])) {
     if (strlen($r_nazwisko) < 1) {
         $wszystko_ok = false;
         $_SESSION['e_nazwisko'] = "<i class=\"fas fa-user-times\"></i> Pole nazwisko jest wymagane!";
+
+        echo "<style>
+
+input[name='r_nazwisko'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
     }
 
     if (strlen($r_nazwisko) > 16) {
         $wszystko_ok = false;
         $_SESSION['e_nazwisko'] = "<i class=\"fas fa-user-times\"></i> Wprowadź maksymalnie 15 liter!";
+
+        echo "<style>
+
+input[name='r_nazwisko'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
     }
 
     if (ctype_alnum($r_nazwisko) == false) {
         $wszystko_ok = false;
         $_SESSION['e_nazwisko'] = "<i class=\"fas fa-user-times\"></i> Pole nazwisko jest wymagane!";
+
+        echo "<style>
+
+input[name='r_nazwisko'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
     }
 
     if (preg_match("/[^A-z_-]/", $r_nazwisko) == 1) {
         $wszystko_ok = false;
         $_SESSION['e_nazwisko'] = "<i class=\"fas fa-user-times\"></i> Wprowadź tylko litery!";
+
+        echo "<style>
+
+input[name='r_nazwisko'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
     }
 
     $r_login = trim($_POST['r_login']);
@@ -55,28 +132,73 @@ if (isset($_POST['r_imie'])) {
     if (strlen($r_login) < 1) {
         $wszystko_ok = false;
         $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i> Pole numer dostępu jest wymagane!";
+
+        echo "<style>
+
+input[name='r_login'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
     }
 
     if (strlen($r_login) > 11) {
         $wszystko_ok = false;
         $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i> Wprowadź maksymalnie 10 znaków!";
+
+        echo "<style>
+
+input[name='r_login'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
     }
 
     if (is_numeric($r_login) == false) {
         $wszystko_ok = false;
         $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i>Podaj tylko cyfry!";
+
+        echo "<style>
+
+input[name='r_login'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
     }
 
     if (is_numeric($r_login) == false || ((int)$r_login != $r_login))
     {
         $wszystko_ok = false;
         $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i> Wprowadź tylko cyfry całkowite!";
+
+        echo "<style>
+
+input[name='r_login'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
     }
 
     if(strpos($r_login, '.') == true)
     {
         $wszystko_ok = false;
         $_SESSION['e_login'] = "<i class=\"fas fa-user-times\"></i> Wprowadź tylko cyfry całkowite!";
+
+        echo "<style>
+
+input[name='r_login'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
     }
 
     $r_haslo = trim($_POST['r_haslo']);
@@ -84,23 +206,59 @@ if (isset($_POST['r_imie'])) {
     if (strlen($r_haslo) < 1) {
         $wszystko_ok = false;
         $_SESSION['e_haslo'] = "<i class=\"fas fa-user-times\"></i> Pole kod dostępu jest wymagane!";
+
+        echo "<style>
+
+input[name='r_haslo'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
     }
 
     if (strlen($r_haslo) > 11) {
         $wszystko_ok = false;
         $_SESSION['e_haslo'] = "<i class=\"fas fa-user-times\"></i> Wprowadź maksymalnie 10 znaków!";
+
+        echo "<style>
+
+input[name='r_haslo'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
     }
 
     if (is_numeric($r_haslo) == false || ((int)$r_haslo != $r_haslo))
     {
         $wszystko_ok = false;
         $_SESSION['e_haslo'] = "<i class=\"fas fa-user-times\"></i> Wprowadź tylko cyfry całkowite!";
+
+        echo "<style>
+
+input[name='r_haslo'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
     }
 
     if(strpos($r_haslo, '.') == true)
     {
         $wszystko_ok = false;
         $_SESSION['e_haslo'] = "<i class=\"fas fa-user-times\"></i> Wprowadź tylko cyfry całkowite!";
+
+        echo "<style>
+
+input[name='r_haslo'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
     }
 
     require_once "../php/connect.php";
@@ -312,7 +470,7 @@ if (isset($_POST['r_imie'])) {
         <?php
 
         if (isset($_SESSION['e_haslo'])) {
-            echo '<div class="f_error" style>' . $_SESSION['e_haslo'] . '</div>';
+            echo '<div class="f_error">' . $_SESSION['e_haslo'] . '</div>';
             unset($_SESSION['e_haslo']);
         }
 

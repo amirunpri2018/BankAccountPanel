@@ -45,7 +45,7 @@ if ($polaczenie->connect_errno != 0) {
             $rezultat->free_result();
             header('Location: ../pulpit/index.php');
         } else {
-            $_SESSION['blad'] = '<div style="color: red; text-align: center; font-weight: bold; font-size: 13px;">Nieprawidłowy numer lub kod dostępu!</div>';
+            $_SESSION['blad'] = '<div style="color: red; text-align: center; font-size: 13px;">Nieprawidłowy numer lub kod dostępu!</div>';
             header('location: ../index.php');
         }
     }

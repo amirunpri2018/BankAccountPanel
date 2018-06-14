@@ -46,6 +46,14 @@ if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] == true))
     if (isset($_SESSION['blad']))
     {
         echo $_SESSION['blad'];
+        echo "<style>
+
+input[type='text'], input[type='password'] {
+border: 1px solid red!important;
+background-color: rgba(255,0,0,0.10)!important;
+}
+
+</style>";
         unset($_SESSION['blad']);
     }
 

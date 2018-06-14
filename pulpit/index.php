@@ -63,10 +63,21 @@ $polaczenie->close();
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-light p-4" style="text-align: center;">
+            <a class="dropdown-item" href="index.php">Pulpit</a>
+            <a class="dropdown-item" href="../platnosci/">Płatności</a>
+            <a class="dropdown-item" href="../ustawienia/">Ustawienia</a>
+            <a class="dropdown-item" href="../php/logout.php">Wyloguj</a>
+        </div>
+    </div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light nawigacja">
+    <nav class="navbar navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
     <a class="navbar-brand" href="#">C<span class="sql">.</span>E<span class="sql">.</span>O Bank</a>
     <span class="navbar-text">
       Dzień dobry <span class="sql"><?php echo $_SESSION['imie'] ?></span>!
