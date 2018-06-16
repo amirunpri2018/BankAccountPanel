@@ -145,8 +145,14 @@ body {
 }
 
 
-@media (max-width: 427px) {
+@media (max-width: 427px){
   .textmakeprzelew, .navbar-text {
+    display: none;
+  }
+}
+
+@media (min-width: 427px) and (max-width: 440px) {
+  .navbar-text, .textmakeprzelew {
     display: none;
   }
 }
